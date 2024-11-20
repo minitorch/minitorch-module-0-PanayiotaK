@@ -126,9 +126,9 @@ def relu_back(x: Number, b: Number) -> Number:
 # - prod: take the product of lists
 
 
-
-
 def map(fn: Callable, a: list[object]) -> list[object]:
+    """Given a function and a list the given function is applied to the
+    all the elements of the list"""
     return [fn(item) for item in a]
 
 
@@ -137,6 +137,18 @@ def zipWith():
 
 
 def reduce(fn: Callable, a: list[Number]) -> Number:
+    """
+    Given a function and a list the function is applied to the first 2 elements and returns an output.
+    Using that output and the 3rd element we apply the function again. The process is repeated until we
+    have a single number
+
+    Args:
+        fn (Callable): _description_
+        a (list[Number]): _description_
+
+    Returns:
+        Number: _description_
+    """
     result = a[0]
     for item in a[1:]:
         result = fn(result, item)
@@ -144,6 +156,7 @@ def reduce(fn: Callable, a: list[Number]) -> Number:
 
 
 def negList(a: list[Number]) -> list[Number]:
+    """Negates all the elements in a given list"""
     return [-item for item in a]
 
 
@@ -164,12 +177,14 @@ def addLists(a: list[Number], b: list[Number]) -> list[Number]:
 
 
 def sum(a: list[Number]) -> Number:
+    """Returns the sum of all the elements in a list"""
     if a:
         return reduce(lambda x, y: x + y, a)
     return 0
 
 
 def prod(a: list[Number]) -> Number:
+    """Returns the product of all the elements in a given list"""
     if a:
         return reduce(lambda x, y: x * y, a)
     return 0
