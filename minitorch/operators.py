@@ -126,7 +126,6 @@ def relu_back(x: Number, b: Number) -> Number:
 # - prod: take the product of lists
 
 
-# TODO: Implement for Task 0.3.
 
 
 def map(fn: Callable, a: list[object]) -> list[object]:
